@@ -33,7 +33,7 @@ gcloud spanner databases ddl update testcase --instance=sciobeamspannertestcase 
 5) Execute Job:
 
 ```
-sbt "runMain com.joinhoney.droplistmigration.Testcase --project=<YOUR-PROJECT-ID> --runner=DataflowRunner --region=us-central1 --jobName=sciobeamspannertestcase"
+sbt "runMain com.joinhoney.sciobeamspannertestcase.Testcase --project=<YOUR-PROJECT-ID> --runner=DataflowRunner --region=us-central1 --jobName=sciobeamspannertestcase"
 ```
 
 ## Error Logs
