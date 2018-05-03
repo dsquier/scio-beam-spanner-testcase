@@ -1,10 +1,10 @@
-# Scio / Beam / Spanner Test Case#
+# Scio / Beam / Spanner Test Case
 
-A re-producable test case to surface Spanner errors when using Scio 0.5.2 + Beam 2.4.0 + SpannerIO.
+A re-producable test case to surface Spanner errors when using Scio 0.5.3 + Beam 2.4.0 + SpannerIO. See: https://github.com/spotify/scio/issues/1138
 
 ## Overview
 
-After upgrading Scio from 0.5.0 -> 0.5.2 and Apache Beam from 2.2.0 -> 2.4.0, a batch Dataflow job is erroring out, unable to complete.
+After upgrading Scio from 0.5.0 -> 0.5.3 and Apache Beam from 2.2.0 -> 2.4.0, a batch Dataflow job is erroring out, unable to complete.
 
 Additional observations:
 
