@@ -1,7 +1,7 @@
 import sbt._
 
 object Dependencies {
-  val scioVersion = "0.5.3"
+  val scioVersion = "0.5.4-PR1140-SNAPSHOT"
   val beamVersion = "2.4.0"
   val defaultScalaVersion = "2.12.5"
   val scalaMacrosVersion = "2.1.1"

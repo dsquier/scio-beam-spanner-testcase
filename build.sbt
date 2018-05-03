@@ -3,6 +3,7 @@ import Keys._
 import Dependencies._
 
 lazy val commonSettings = Defaults.coreDefaultSettings ++ Seq(
+  resolvers             += Resolver.sonatypeRepo("snapshots"),
   organization          := "com.joinhoney",
   version               := "1.1.0",
   scalaVersion          := defaultScalaVersion,
