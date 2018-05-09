@@ -2,18 +2,20 @@ package com.joinhoney.sciobeamspannertestcase
 
 import java.util
 
+import cats.syntax.either._
 import com.google.cloud.spanner.Mutation
-import com.google.datastore.v1.Entity
+import com.google.datastore.v1.{Entity, Value}
+import com.spotify.scio.ContextAndArgs
 import io.circe._
 import io.circe.generic.auto._
 import io.circe.parser.parse
-import com.spotify.scio.{ContextAndArgs, _}
 import org.apache.beam.sdk.io.gcp.spanner.{MutationGroup, SpannerConfig, SpannerIO}
 import org.apache.beam.sdk.transforms.DoFn
 import org.apache.beam.sdk.transforms.DoFn.ProcessElement
 import org.apache.commons.codec.digest.DigestUtils
 import org.slf4j.LoggerFactory
 
+import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 case class InputRecord(
@@ -173,9 +175,10 @@ class GetDroplistFromEntityDoFn()
     var notifications = new ListBuffer[Notification]()
     val price_notified_values_list = price_notified_array.getValuesList
 
-    // If there are no elements, there are no rows to insert to child_table
     if (price_notified_count > 0) {
-      price_notified_values_list.forEach(item => notifications += getPriceNotified(item.getEntityValue))
+      price_notified_values_list
+        .iterator().asScala
+        .foreach(item => notifications += getPriceNotified(item.getEntityValue))
     }
 
     val test_bool = false
