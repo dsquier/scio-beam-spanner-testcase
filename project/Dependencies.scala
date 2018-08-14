@@ -1,10 +1,9 @@
 import sbt._
 
 object Dependencies {
-  val scioVersion = "0.5.4-PR1140-SNAPSHOT"
-  val beamVersion = "2.4.0"
-//  val defaultScalaVersion = "2.12.5"
-  val defaultScalaVersion = "2.11.12"
+  val scioVersion = "0.5.7-SNAPSHOT"
+  val beamVersion = "2.6.0"
+  val defaultScalaVersion = "2.12.6"
   val scalaMacrosVersion = "2.1.1"
   val circeVersion = "0.9.2"
   val slf4jVersion = "1.7.25"
@@ -14,6 +13,7 @@ object Dependencies {
     "com.spotify" %% "scio-test" % scioVersion % "test",
     "org.apache.beam" % "beam-runners-direct-java" % beamVersion,
     "org.apache.beam" % "beam-runners-google-cloud-dataflow-java" % beamVersion,
+    "org.apache.beam" % "beam-sdks-java-io-google-cloud-platform" % beamVersion,
     "org.slf4j" % "slf4j-simple" % slf4jVersion,
     "io.circe" %% "circe-core" % circeVersion,
     "io.circe" %% "circe-generic" % circeVersion,
